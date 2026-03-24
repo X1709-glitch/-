@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رَاسِخ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="sidebar">
+    <h1 class="sidebar-titlee">رَاسِخ</h1>
+    <ul class="main-menu">
+	<li>
+    <a href="#prayer-main" style="font-weight: bold; color: var(--accent-purple);">مواقيت الصلاة</a>
+</li>
+
+<li>
+    <a href="#prayer-obligatory" style="font-weight: bold; color: var(--accent-purple);">1. صلاة الفريضة</a>
+    </li>
+        <li>
+            <a href="#intro-section" class="parent-link">أولاً: أساسيات الدين</a>
+            <ul class="sub-menu">
+                <li><a href="#islam-pillars">أركان الإسلام</a></li>
+                <li><a href="#iman-pillars">أركان الإيمان</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#prayer-main-section" class="parent-link">ثانياً: الصلاة</a>
+            <ul class="sub-menu">
+                
+                <li>
+                    <a href="#prayer-obligatory" style="font-weight: bold; color: var(--accent-purple);">1. صلاة الفريضة</a>
+                    <ul class="sub-menu" style="margin-right: 20px; border-right: 1px dashed rgba(255,255,255,0.2);">
+                        <li><a href="#prayer-count">عدد الصلوات</a></li>
+                        <li><a href="#prayer-times-detail">مواقيت الصلوات</a></li>
+						<li><a href="#prayer-conditions">شروط الصلاة</a></li>
+						<li><a href="#prayer-pillars-14">أركان الصلاة</a></li>
+						<li><a href="#prayer-obligations-8">واجبات الصلاة </a></li>
+						<li><a href="#prayer-khushu">الخشوع</a></li>
+						<li><a href="#prayer-sunnah-section">سنن الصلاة</a></li>
+						<li><a href="#prayer-nullifiers-8">مبطلات الصلاة </a></li>
+						<li><a href="#prostration-of-forgetfulness">سجود السهو</a></li>
+						<li><a href="#congregational-prayer">صلاة الجماعة</a></li>
+						<li><a href="#prayer-shortening">الجمع و القصر  </a></li>
+						<li><a href="#prayer-supplications">مواضع الدعاء في الصلاة</a></li>
+                        <li><a href="#after-prayer-dhikr">أذكار ما بعد الصلاة</a></li>
+						<li><a href="#forbidden-prayer-times">أوقات النهي عن الصلاة</a></li>
+                    </ul>
+                </li>
+<li>
+    <a href="#prayer-other-obligatory" style="font-weight: bold; color: var(--accent-purple);">2. صلوات واجبة غير يومية</a>
+    <ul class="sub-menu" style="margin-right: 20px; border-right: 1px dashed rgba(255,255,255,0.2);">
+        <li><a href="#friday-prayer">صلاة الجمعة</a></li>
+        <li><a href="#eid-prayer">صلاة العيدين</a></li>
+        <li><a href="#janaza-prayer">صلاة الجنازة</a></li>
+    </ul>
+</li>					
+                    </li>
+					
+
+                <li>
+<li>
+    <a href="#prayer-sunnah" style="font-weight: bold; color: var(--accent-purple);">3. النوافل </a>
+    <ul class="sub-menu" style="margin-right: 20px; border-right: 1px dashed rgba(255,255,255,0.2); font-size: 0.85rem;">
+        <li><a href="#sunnah-ratiba">السنن الرواتب</a></li>
+        <li><a href="#duha-prayer">صلاة الضحى</a></li>           <li><a href="#night-prayer">قيام الليل والوتر</a></li>
+        <li><a href="#special-sunnah">نوافل ذوات الاسباب</a></li>
+        <li><a href="#eclipse-rain">الكسوف والاستسقاء</a></li>
+    </ul>
+</li>
+
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+    <main class="content">
+        
+        <section id="prayer-main" class="topic-box">
+            <h1>🕒 أوقات الصلوات</h1>
+            
+            <div class="live-times-grid">
+                <div class="time-card">الفجر: <span id="fajr">-</span></div>
+                <div class="time-card">الشروق: <span id="sunrise">-</span></div>
+                <div class="time-card">الظهر: <span id="dhuhr">-</span></div>
+                <div class="time-card">العصر: <span id="asr">-</span></div>
+                <div class="time-card">المغرب: <span id="maghrib">-</span></div>
+                <div class="time-card">العشاء: <span id="isha">-</span></div>
+            </div>
+
+            <div id="prayer-notification" class="prayer-notif">
+                <div id="notif-text"></div>
+                <div id="iqama-timer" style="display: none;">
+                <span id="timer-min">20</span>
+                </div>
+            </div>
+
+            <br>
+            <h2>أوقات إضافية</h2>
+            <div class="logic-results">
+                <div class="logic-item">🌙 منتصف الليل: <strong id="midnight-result">-</strong></div>
+                <div class="logic-item">🌅 اصفرار الشمس: <strong id="golden-hour-result">-</strong></div>
+            </div>
+
+            <br>
+            <div class="container">
+                <h2>أوقات النهي عن الصلاة</h2>
+                <div id="forbidden-status"></div>
+                <div class="forbidden-section">
+                    <div class="forbidden-card">1. من بعد الفجر إلى طلوع الشمس: <span id="forbid-fajr-subh">-</span></div>
+                    <div class="forbidden-card mghlth">2. وقت شروق الشمس: <span id="forbid-sunrise">-</span></div>
+                    <div class="forbidden-card mghlth">3. قائم الظهيرة: <span id="forbid-noon">-</span></div>
+                    <div class="forbidden-card">4. من بعد العصر إلى اصفرار الشمس: <span id="forbid-asr-golden">-</span></div>
+                    <div class="forbidden-card mghlth">5. من الاصفرار حتى يكتمل الغروب: <span id="forbid-sunset">-</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="intro-section">
+            <h1 class="main-title">أولاً: أساسيات الدين</h1>
+
+            <article id="islam-pillars" class="topic-box">
+                <h2 class="section-subtitle">أركان الإسلام</h2>
+                <p>الإسلام هو الاستسلام لله بالتوحيد والانقياد له بالطاعة، وهو يركز على ما يظهر من الإنسان من عبادات وجوارح.</p>
+                <div class="hadith-box">
+                    <strong>الدليل:</strong> قال النبي ﷺ: "بُنِيَ الإسْلَامُ علَى خَمْسٍ: شَهَادَةِ أنْ لا إلَهَ إلَّا اللَّهُ وأنَّ مُحَمَّدًا رَسولُ اللَّهِ، وإقَامِ الصَّلَاةِ، وإيتَاءِ الزَّكَاةِ، والحَجِّ، وصَوْمِ رَمَضَانَ" [رواه البخاري ومسلم].
+                </div>
+                <h3>الأركان الخمسة:</h3>
+                <ol class="pillars-list">
+                    <li><strong>الشهادتان:</strong> مفتاح الدخول في الإسلام والإقرار بتوحيد الله ونبوة محمد ﷺ.</li>
+                    <li><strong>إقامة الصلاة:</strong> الصلوات الخمس المفروضة في اليوم والليلة.</li>
+                    <li><strong>إيتاء الزكاة:</strong> حق مالي واجب في أموال الأغنياء يُعطى للفقراء والمستحقين.</li>
+                    <li><strong>صوم رمضان:</strong> الإمساك عن المفطرات من طلوع الفجر إلى غروب الشمس في شهر رمضان.</li>
+                    <li><strong>حج البيت:</strong> زيارة مكة المكرمة لأداء مناسك محددة لمن استطاع إليه سبيلاً.</li>
+                </ol>
+            </article>
+
+            <article id="iman-pillars" class="topic-box">
+                <h2 class="section-subtitle">أركان الإيمان</h2>
+                <p>الإيمان هو التصديق الجازم بالقلب، وهو المحرك الأساسي للأعمال، ومحله "الداخل".</p>
+                <div class="hadith-box">
+                    <strong>الدليل:</strong> سأل جبريلُ النبيَّ ﷺ: "أخبِرني عنِ الإيمانِ"، قال: "أن تُؤْمِنَ باللهِ، ومَلائِكَتِهِ، وكُتُبِهِ، ورُسُلِهِ، واليَومِ الآخِرِ، وتُؤْمِنَ بالقَدَرِ خَيْرِهِ وشَرِّهِ" [رواه مسلم].
+                </div>
+                <h3>الأركان الستة:</h3>
+                <ul class="pillars-list">
+                    <li><strong>الإيمان بالله:</strong> اليقين بوجوده، وربوبيته، وإلهيته، وأسمائه وصفاته.</li>
+                    <li><strong>الإيمان بالملائكة:</strong> أنهم عباد مُكرمون خلقهم الله من نور.</li>
+                    <li><strong>الإيمان بالكتب:</strong> مثل القرآن، التوراة، الإنجيل، والزبور.</li>
+                    <li><strong>الإيمان بالرسل:</strong> التصديق بجميع الأنبياء والرسل من آدم إلى محمد ﷺ.</li>
+                    <li><strong>الإيمان باليوم الآخر:</strong> اليقين بالبعث، الحساب، والجنة والنار.</li>
+                    <li><strong>الإيمان بالقدر:</strong> التصديق بأن كل ما يقع في الكون هو بعلم الله وتقديره، خيره وشره.</li>
+                </ul>
+            </article>
+        </section>
+
+        <section id="prayer-obligatory">
+            <h1 class="main-title">ثانياً: صلاة الفرض</h1>
+
+            <article id="prayer-count" class="topic-box">
+                <h2 class="section-subtitle">🔷 عدد الصلوات</h2>
+                <p>الله فرض علينا خمس صلوات في اليوم، وأي شيء زيادة هذا من باب التطوع.</p>
+                <div class="hadith-box">
+                    عن طلحة بن عبيد الله رضي الله عنه أن أعرابياً جاء إلى رسول الله ﷺ ثائر الرأس، فقال: يا رسول الله أخبرني ماذا فرض الله علي من الصلاة؟ فقال: <strong>"خَمْسُ صَلَواتٍ في اليَومِ واللَّيْلَةِ"</strong>، فقال: هلْ عَلَيَّ غَيْرُها؟ قالَ: "لا، إلَّا أنْ تَطَّوَّعَ". (رواه البخاري ومسلم).
+                </div>
+                <div class="hadith-box">
+                    عن ابن عباس رضي الله عنهما، أن النبي ﷺ لما بعث معاذاً إلى اليمن قال له: "أَعْلِمْهُمْ أَنَّ اللَّهَ افْتَرَضَ عَلَيْهِمْ خَمْسَ صَلَوَاتٍ فِي كُلِّ يَوْمٍ وَلَيْلَةٍ". (رواه البخاري).
+                </div>
+            </article>
+
+            <article id="prayer-times-detail" class="topic-box">
+                <h2 class="section-subtitle">🔷 أوقات الصلوات</h2>
+                <p>لكل صلاة وقت محدد ينبغي أداؤها فيه.</p>
+                <div class="hadith-box">
+                    قال رسول الله ﷺ:<strong>• وقت الظهر: "إِذَا زَالَتِ الشَّمْسُ وَكَانَ ظِلُّ الرَّجُلِ كَطُولِهِ مَا لَمْ يَحْضُرِ الْعَصْرُ".
+• وقت العصر: "مَا لَمْ تَصْفَرَّ الشَّمْسُ".
+• وقت المغرب: "مَا لَمْ يَغِبِ الشَّفَقُ".
+• وقت العشاء: "إِلَى نِصْفِ اللَّيْلِ الأَوْسَطِ".
+• وقت الفجر: "مِنْ طُلُوعِ الْفَجْرِ مَا لَمْ تَطْلُعِ الشَّمْسُ".</strong>(رواه مسلم).
+                </div>
+
+                <div class="forbidden-section">
+                    <div class="forbidden-card">
+                        <div>
+                            <strong>• الفجر:</strong> من طلوع الفجر الصادق ما لم تطلع الشمس. 
+                            <br><small>قال ﷺ: "من أدرك ركعة قبل شروق الشمس فقد أدرك الصبح."</small>
+                        </div>
+                    </div>
+                    <div class="forbidden-card">
+                        <div>
+                            <strong>• الظهر:</strong> من زوال الشمس حتى يصبح ظل الشيء كطوله.
+                            <br><small>قال ﷺ: "إِذَا زَالَتِ الشَّمْسُ وَكَانَ ظِلُّ الرَّجُلِ كَطُولِهِ".</small>
+                        </div>
+                    </div>
+                    <div class="forbidden-card">
+                        <div>
+                            <strong>• العصر:</strong> يبدأ بدخول اذان العصر وينتهي وقت الاختيار عند اصفرار الشمس.
+                            <br><small>قال ﷺ: "وَوَقْتُ الْعَصْرِ مَا لَمْ تَصْفَرَّ الشَّمْسُ".</small>
+                        </div>
+                    </div>
+                    <div class="forbidden-card">
+                        <div>
+                            <strong>• المغرب:</strong> من غروب الشمس حتى مغيب الشفق الأحمر.
+                            <br><small>قال ﷺ: "وَوَقْتُ صَلَاةِ الْمَغْرِبِ مَا لَمْ يَغِبِ الشَّفَقُ".</small>
+                        </div>
+                    </div>
+                    <div class="forbidden-card">
+                        <div>
+                            <strong>• العشاء:</strong> يبدأ من مغيب الشفق الأحمر وينتهي وقت الاختيار عند نصف الليل.
+                            <br><small>قال ﷺ: "وَوَقْتُ صَلَاةِ الْعِشَاءِ إِلَى نِصْفِ اللَّيْلِ الأَوْسَطِ".</small>
+                        </div>
+                    </div>
+					<div class="hadith-box">
+    <strong>قاعدة إدراك الوقت:</strong> إذا أدركت ركعة كاملة قبل خروج وقت الصلاة تعتبر أدركت الصلاة في وقتها.
+    <br><br>
+    قال ﷺ: <span class="accent-text">"مَن أدرَكَ مِنَ الصُّبحِ رَكعةً قَبلَ أن تَطلُعَ الشَّمسُ فقد أدرَكَ الصُّبحَ، ومَن أدرَكَ رَكعةً مِنَ العَصرِ قَبلَ أن تَغرُبَ الشَّمسُ فقد أدرَكَ العَصرَ"</span>. [رواه البخاري].
+</div>
+<div class="prayer-notif" style="border-color: #ff4d4d; background: rgba(255, 77, 77, 0.05); text-align: right; padding: 30px;">
+    <h3 style="color: #ff4d4d; margin-bottom: 15px;">⚠️ تحذير من تأخير الصلاة عن وقتها</h3>
+    <p>الصلاة عبادة محددة بأوقات شرعية، وتأخيرها عن وقتها من غير عذر شرعي يُعد أمراً مذموماً وخطيراً.</p>
+
+    <div class="hadith-box" style="border-right-color: #ff4d4d; background: rgba(255, 255, 255, 0.03); margin: 20px 0;">
+        <p style="margin: 10px 0;">{إِنَّ الصَّلَاةَ كَانَتْ عَلَى الْمُؤْمِنِينَ كِتَابًا مَوْقُوتًا} <small>[النساء: 103]</small></p>
+        <p style="color: #ff4d4d;">{فَوَيْلٌ لِّلْمُصَلِّينَ * الَّذِينَ هُمْ عَن صَلَاتِهِمْ سَاهُونَ} <small>[الماعون: 4-5]</small></p>
+    </div>
+
+    <div class="forbidden-card" style="border: none; background: transparent; padding: 0;">
+        <p>قال ﷺ محذراً: <span class="accent-text" style="color: #ff4d4d;">"تِلْكَ صَلَاةُ المُنَافِقِ، يَجْلِسُ يَرْقُبُ الشَّمْسَ حتَّى إذَا كَانَتْ بيْنَ قَرْنَيِ شيطَانٍ، قَامَ فَنَقَرَهَا أَرْبَعًا، لا يَذْكُرُ اللَّهَ فِيهَا إلَّا قَلِيلاً".</span> <small>[رواه مسلم]</small></p>
+    </div>
+
+    <div style="margin-top: 15px; border-top: 1px dashed var(--glass-border); padding-top: 15px;">
+        <strong style="color: var(--accent-cyan);">أحب الأعمال:</strong> سُئل النبي ﷺ: أي العمل أحب إلى الله؟ قال: <span class="accent-text">"الصَّلاةُ علَى وقْتِها"</span>. <small>[متفق عليه]</small>
+    </div>
+</div>
+<div id="missed-prayer" class="topic-box-sub">
+    <h2 class="section-subtitle">🔷 حكم من فاتته صلاة</h2>
+    
+    <div class="hadith-box">
+        <strong class="accent-text">1. غير المتعمد (الناسي أو النائم):</strong> 
+        ليس عليه إثم، ولكن يجب عليه قضاؤها فور تذكرها.
+        <br><br>
+        قال ﷺ: <span class="accent-text">"من نام عن الصلاة أو نسيها فليصلها إذا ذكرها، لا كفارة لها إلا ذلك"</span>.
+        <br><br>
+        وقال ﷺ: <span class="accent-text">«أَمَا إِنَّهُ لَيْسَ فِي النَّوْمِ تَفْرِيطٌ، إِنَّمَا التَّفْرِيطُ عَلَى مَنْ لَمْ يُصَلِّ الصَّلَاةَ حَتَّى يَجِيءَ وَقْتُ الصَّلَاةِ الأُخْرَى، فَمَنْ فَعَلَ ذَلِكَ فَلْيُصَلِّهَا حِينَ يَنْتَبِهُ لَهَا»</span>. [رواه مسلم].
+    </div>
+
+    <div class="hadith-box" style="border-right-color: #ff4d4d;">
+        <strong style="color: #ff4d4d;">2. المتعمد (التارك للصلاة):</strong>تارك الصلاة عمداً تهاوناً وكسلاً على خطر عظيم، وهو مرتكب لكبيرة من أعظم الكبائر، وقد ذهب كثير من أهل العلم إلى كفره كفراً أكبر مخرجاً من الملة
+        <br><br>
+        قال ﷺ: <span class="accent-text">"بَيْنَ الرَّجُلِ وَبَيْنَ الشِّرْكِ وَالْكُفْرِ تَرْكُ الصَّلَاةِ"</span>. [رواه مسلم].
+        <br><br>
+        وقال ﷺ: <span class="accent-text">"العَهْدُ الَّذِي بَيْنَنَا وَبَيْنَهُمُ الصَّلاةُ، فَمَنْ تَرَكَهَا فَقَدْ كَفَرَ"</span>. [رواه الترمذي وصححه الألباني].
+    </div>
+</div>
+</div>
+                </div>
+            </article>
+			<article id="prayer-conditions" class="topic-box">
+    <h2 class="section-subtitle">🔷 شروط الصلاة (9 شروط)</h2>
+    <p>الشرط هو ما يجب توفره <strong>قبل</strong> الدخول في الصلاة، وعدم توفره يعني بطلان الصلاة من أساسها.</p>
+
+    <div class="forbidden-section">
+        <div class="forbidden-card">
+            <div>
+                <strong>1. الإسلام:</strong> لا تصح الصلاة من كافر.
+                <br><small>الدليل: {وَمَن يَبْتَغِ غَيْرَ الْإِسْلَامِ دِينًا فَلَن يُقْبَلَ مِنْهُ}.</small>
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>2. العقل:</strong> تسقط عن المجنون حتى يفيق.
+                <br><small>قوله ﷺ: "رُفِعَ القلمُ عن ثلاثةٍ: عن النائمِ حتى يستيقظَ، وعن الصبيِّ حتى يحتلمَ، وعن المجنونِ حتى يَعقِلَ"</small>
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>3. التمييز:</strong> بلوغ السابعة من العمر غالباً.
+                <br><small>الدليل: قوله ﷺ: "مُروا أولادكم بالصلاة وهم أبناء سبع سنين".</small>
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>4. رفع الحدث (الطهارة):</strong> الوضوء و الغسل.
+                <br><small>الدليل: قوله ﷺ: "لا يَقْبَلُ اللَّهُ صَلاةً بغيرِ طُهُورٍ".</small>
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>5. إزالة النجاسة:</strong> من البدن والثوب والمكان.
+                <br><small>الدليل: قوله تعالى: {وَثِيَابَكَ فَطَهِّرْ}.</small>
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>6. ستر العورة:</strong> بما يستر البدن حسب الشرع.
+                <br><small>الدليل: قوله تعالى: {خُذُوا زِينَتَكُمْ عِندَ كُلِّ مَسْجِدٍ}.</small>
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>7. دخول الوقت:</strong> لا تصح الصلاة قبل وقتها.
+                <br><small>الدليل: {إِنَّ الصَّلَاةَ كَانَتْ عَلَى الْمُؤْمِنِينَ كِتَابًا مَوْقُوتًا}.</small>
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>8. استقبال القبلة:</strong> التوجه نحو الكعبة المشرفة.
+                <br><small>الدليل: {فَوَلِّ وَجْهَكَ شَطْرَ الْمَسْجِدِ الْحَرَامِ}.</small>
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>9. النية:</strong> محلها القلب ولا يُشرع التلفظ بها.
+                <br><small>الدليل: قوله ﷺ: "إنما الأعمال بالنيات".</small>
+            </div>
+        </div>
+    </div>
+</article>
+<article id="prayer-pillars-14" class="topic-box">
+    <h2 class="section-subtitle">🔷 أركان الصلاة (14 ركناً)</h2>
+    <p>أركان الصلاة هي الأساس التي تقوم عليها، وإذا سقط أحدها عمداً أو سهواً <strong>بطلت الصلاة</strong> ولا تُجبر بسجود السهو، بل يجب إعادتها.</p>
+
+    <div class="forbidden-section">
+        <div class="forbidden-card">
+            <div>
+                <strong>1. القيام في الفرض على القادر:</strong> {وَقُومُوا لِلَّهِ قَانِتِينَ}.
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>2. تكبيرة الإحرام:</strong> قوله ﷺ: "وَتَحْرِيمُهَا التَّكْبِيرُ".
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>3. قراءة الفاتحة:</strong> "لا صَلاةَ لِمَن لَمْ يَقْرأْ بفاتِحَةِ الكِتابِ".
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>4. الركوع:</strong> {يَا أَيُّهَا الَّذِينَ آمَنُوا ارْكَعُوا}.
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>5. الاعتدال بعد الركوع:</strong> "ثُمَّ ارْفَعْ حَتَّى تَعْتَدِلَ قَائِمًا".
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>6. السجود على الأعضاء السبعة:</strong> الجبهة، اليدين، الركبتين، وأطراف القدمين.
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>7. الرفع من السجود:</strong> "ثُمَّ ارْفَعْ حَتَّى تَطْمَئِنَّ جَالِسًا".
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>8. الجلوس بين السجدتين:</strong> كان ﷺ إذا رفع رأسه لم يسجد حتى يستوي جالساً.
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>9. الطمأنينة:</strong> السكون في كل ركن فعلي (حديث المسيء صلاته).
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>10. الترتيب بين الأركان:</strong> "صَلُّوا كَمَا رَأَيْتُمُونِي أُصَلِّي".
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>11. التشهد الأخير:</strong>ولكنْ قُولوا: التَّحيَّاتُ للهِ والصَّلواتُ والطَّيِّباتُ، السَّلامُ عليك أيُّها النَّبيُّ ورَحمةُ اللهِ وبركاتُه، السَّلامُ علينا وعلى عِبادِ اللهِ الصالحينَ، أشْهَدُ أنْ لا إلهَ إلَّا اللهُ، وأشهَدُ أنَّ محمَّدًا عبْدُه ورسولُه.
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>12. الجلوس للتشهد وللتسليمتين:</strong> لملازمة النبي ﷺ لهذا الفعل.
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>13. الصلاة على النبي ﷺ:</strong>ﷺ قال: قولوا: اللهم صل على محمد وعلى آل محمد، كما صليت على إبراهيم، وعلى آل إبراهيم، إنك حميد مجيد، اللهم بارك على محمد، وعلى آل محمد كما باركت على إبراهيم، وعلى آل إبراهيم إنك حميد مجيد
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>14. التسليمتان:</strong> قوله ﷺ: "وَتَحْلِيلُهَا التَّسْلِيمُ".
+            </div>
+        </div>
+    </div>
+</article>
+<article id="prayer-obligations-8" class="topic-box">
+    <h2 class="section-subtitle">🔷 واجبات الصلاة (8 واجبات)</h2>
+    <p>الواجب هو ما يجب فعله وتبطل الصلاة بتركه <strong>عمداً</strong>، ولكن إذا سقط <strong>سهواً</strong> سجد المصلي للسهو وجُبرت صلاته.</p>
+
+    <div class="forbidden-section">
+        <div class="forbidden-card">
+            <div>
+                <strong>1. جميع تكبيرات الانتقال:</strong> (غير تكبيرة الإحرام).
+                <br><small>الدليل: كان ﷺ يكبر حين يقوم، ثم يكبر حين يركع...</small>
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>2. قول "سمع الله لمن حمده":</strong> (للإمام والمنفرد).
+                <br><small>الدليل: قوله ﷺ: "ثم يقول: سمع الله لمن حمده حين يرفع صلبه".</small>
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>3. قول "ربنا ولك الحمد":</strong> (للإمام والمأموم والمنفرد).
+                <br><small>الدليل: قوله ﷺ: "فَقُولوا: رَبَّنَا ولَكَ الحَمْدُ".</small>
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>4. قول "سبحان ربي العظيم":</strong> (في الركوع - مرة واحدة).
+                <br><small>الدليل: كان ﷺ يقول في ركوعه: "سبحان ربي العظيم".</small>
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>5. قول "سبحان ربي الأعلى":</strong> (في السجود - مرة واحدة).
+                <br><small>الدليل: كان ﷺ يقول في سجوده: "سبحان ربي الأعلى".</small>
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>6. قول "رب اغفر لي":</strong> (بين السجدتين).
+                <br><small>الدليل: كان ﷺ يقول بين السجدتين: "رب اغفر لي، رب اغفر لي".</small>
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>7. التشهد الأول:</strong> في الركعة الثانية من الصلاة الثلاثية والرباعية.
+                <br><small>الدليل: تركه النبي ﷺ سهواً وجبره بسجود السهو.</small>
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>8. الجلوس للتشهد الأول:</strong> هيئة الجلوس نفسها واجبة.
+                <br><small>الدليل: أمره ﷺ: "فإذا جلستم في وسط الصلاة فقولوا: التحيات".</small>
+            </div>
+        </div>
+    </div>
+</article>
+<article id="prayer-khushu" class="topic-box">
+    <h1 class="main-title">🔷 الخشوع في الصلاة</h1>
+    <p>الخشوع هو روح الصلاة؛ وهو حضور القلب، والتذلل لله، وعدم الانشغال بغيره.</p>
+    
+    <div class="hadith-box">
+        <strong>قال تعالى:</strong> <span class="accent-text">{قَدْ أَفْلَحَ الْمُؤْمِنُونَ • الَّذِينَ هُمْ فِي صَلَاتِهِمْ خَاشِعُونَ}</span>.
+    </div>
+
+    <h3 style="margin-bottom: 20px; color: var(--accent-purple);">يجب التنبه دائماً إلى ستة أمور لتحقيق الخشوع:</h3>
+
+    <div class="forbidden-section" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+        
+        <div class="forbidden-card" style="flex-direction: column; align-items: flex-start;">
+            <strong style="color: var(--accent-cyan);">1. استحضار الوقوف بين يدي الله</strong>
+            <small>أن تستشعر أنك واقف أمام الله الآن، يسمعك ويراك.</small>
+        </div>
+
+        <div class="forbidden-card" style="flex-direction: column; align-items: flex-start;">
+            <strong style="color: var(--accent-cyan);">2. حضور القلب</strong>
+            <small>ترك الانشغال بالدنيا والتركيز الكامل في أفعال الصلاة.</small>
+        </div>
+
+        <div class="forbidden-card" style="flex-direction: column; align-items: flex-start;">
+            <strong style="color: var(--accent-cyan);">3. الفهم والتدبر</strong>
+            <small>فهم معاني الايآت و كل ما تقوله اثناء الصلاة.</small>
+        </div>
+
+        <div class="forbidden-card" style="flex-direction: column; align-items: flex-start;">
+            <strong style="color: var(--accent-cyan);">4. الرجاء</strong>
+            <small>أن تطمع بقلبك في رحمة الله وقبول هذه العبادة.</small>
+        </div>
+
+        <div class="forbidden-card" style="flex-direction: column; align-items: flex-start;">
+            <strong style="color: var(--accent-cyan);">5. الخوف</strong>
+            <small>تخاف من رد الصلاة بسبب التقصير أو غياب الإخلاص.</small>
+        </div>
+
+        <div class="forbidden-card" style="flex-direction: column; align-items: flex-start;">
+            <strong style="color: var(--accent-cyan);">6. الحياء</strong>
+            <small>تستحي من الله أن تقف بين يديه بقلب غافل ومنشغل بغيره.</small>
+        </div>
+
+    </div>
+</article>
+<article id="prayer-sunnah-section" class="topic-box">
+    <h2 class="section-subtitle">🔷 سنن الصلاة</h2>
+    <p>السنن هي الأقوال والأفعال التي تزيد في أجر الصلاة وتشبه صلاة النبي ﷺ، ولا تبطل الصلاة بتركها عمداً أو سهواً.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; margin-top: 20px;">
+        
+        <div class="sunnah-column">
+            <h3 style="color: var(--accent-cyan); margin-bottom: 15px; border-bottom: 1px solid var(--glass-border); padding-bottom: 10px;">✨ سنن الأقوال</h3>
+            <div class="forbidden-section">
+                <div class="forbidden-card"><span>• دعاء الاستفتاح</span><small>(بعد تكبيرة الإحرام)</small></div>
+                <div class="forbidden-card"><span>• الاستعاذة والبسملة</span><small>(قبل الفاتحة)</small></div>
+                <div class="forbidden-card"><span>• قول "آمين"</span><small>(بعد الفاتحة)</small></div>
+                <div class="forbidden-card"><span>• قراءة سورة بعد الفاتحة</span><small>(في أول ركعتين)</small></div>
+                <div class="forbidden-card"><span>• الجهر والإسرار في محلهما</span></div>
+                <div class="forbidden-card"><span>• الزيادة على المرة الواحدة</span><small>(في تسبيح الركوع والسجود)</small></div>
+                <div class="forbidden-card"><span>• قول "حمداً كثيراً طيباً.."</span><small>(بعد الرفع من الركوع)</small></div>
+                <div class="forbidden-card"><span>• الدعاء بعد التشهد الأخير</span><small>(الاستعاذة من الأربع)</small></div>
+            </div>
+        </div>
+
+        <div class="sunnah-column">
+            <h3 style="color: var(--accent-purple); margin-bottom: 15px; border-bottom: 1px solid var(--glass-border); padding-bottom: 10px;">✨ سنن الأفعال</h3>
+            <div class="forbidden-section">
+                <div class="forbidden-card"><span>• رفع اليدين مع التكبير</span><small>(عند الإحرام والركوع والرفع منه)</small></div>
+                <div class="forbidden-card"><span>• وضع اليد اليمنى على اليسرى</span></div>
+                <div class="forbidden-card"><span>• النظر إلى موضع السجود</span></div>
+                <div class="forbidden-card"><span>• تسوية الظهر في الركوع</span></div>
+                <div class="forbidden-card"><span>• الافتراش</span><small>(بين السجدتين وفي التشهد الأول)</small></div>
+                <div class="forbidden-card"><span>• التورك</span><small>(في التشهد الأخير)</small></div>
+                <div class="forbidden-card"><span>• الإشارة بالسبابة</span><small>(عند التشهد)</small></div>
+                <div class="forbidden-card"><span>• الالتفاف عند التسليم</span></div>
+            </div>
+        </div>
+
+    </div>
+</article>
+<article id="prayer-nullifiers-8" class="topic-box">
+    <h2 class="section-subtitle" style="color: #ff4d4d;">🔷 مبطلات الصلاة (8 أشياء)</h2>
+    <p>إذا وقع أحد هذه الأمور في الصلاة <strong>بطلت</strong>، ويجب إعادتها من جديد لأنها تنافي جوهر العبادة وشروطها.</p>
+
+    <div class="forbidden-section">
+        <div class="forbidden-card mghlth">
+            <div>
+                <strong>1. الكلام العمد:</strong> ما ليس من جنس الصلاة.
+                <br><small>الدليل: "إنَّ هذِه الصَّلَاةَ لا يَصْلُحُ فِيهَا شيءٌ مِن كَلَامِ النَّاسِ".</small>
+            </div>
+        </div>
+
+        <div class="forbidden-card mghlth">
+            <div>
+                <strong>2. الضحك (القهقهة):</strong> بالإجماع تبطل الصلاة لأنها تنافي الوقار والخشوع.
+            </div>
+        </div>
+
+        <div class="forbidden-card mghlth">
+            <div>
+                <strong>3 & 4. الأكل والشرب:</strong> أجمع العلماء على بطلان الصلاة بهما.
+            </div>
+        </div>
+
+        <div class="forbidden-card mghlth">
+            <div>
+                <strong>5. انكشاف العورة عمداً:</strong> لأن ستر العورة شرط أساسي للصحة.
+                <br><small>الدليل: {خُذُوا زِينَتَكُمْ عِندَ كُلِّ مَسْجِدٍ}.</small>
+            </div>
+        </div>
+
+        <div class="forbidden-card mghlth">
+            <div>
+                <strong>6. الانحراف الكثير عن القبلة:</strong> الخروج المتعمد عن الوجهة الإلهية.
+                <br><small>الدليل: {فَوَلِّ وَجْهَكَ شَطْرَ الْمَسْجِدِ الْحَرَامِ}.</small>
+            </div>
+        </div>
+
+        <div class="forbidden-card mghlth">
+            <div>
+                <strong>7. العبث الكثير المتوالي:</strong> الحركة المتكررة لغير حاجة (كاللعب بالثوب).
+                <br><small>الدليل: قوله ﷺ: "اسْكُنُوا في الصَّلَاةِ".</small>
+            </div>
+        </div>
+
+        <div class="forbidden-card mghlth">
+            <div>
+                <strong>8. انتقاض الطهارة:</strong>حدوث أي ناقض للوضوء او الطهارة.
+                <br><small>الدليل: "لا تُقْبَلُ صَلاةُ مَن أَحْدَثَ حتَّى يَتَوَضَّأَ".</small>
+            </div>
+        </div>
+    </div>
+</article>
+<article id="prostration-of-forgetfulness" class="topic-box">
+    <h2 class="section-subtitle">🔷 سجود السهو</h2>
+    <p>سجود السهو عبارة عن سجدتين يسجدهما المصلي لجبر الخلل الذي قد يحدث في صلاته نتيجة نسيان أو شك.</p>
+
+    <h3 style="color: var(--accent-cyan); margin: 20px 0 10px 0;">أسباب سجود السهو (3 أسباب):</h3>
+    <div class="forbidden-section">
+        
+        <div class="forbidden-card">
+            <div>
+                <strong>1. الزيادة:</strong> إذا زاد ركوعاً أو سجوداً أو قياماً (نسياناً).
+                <br><small>الدليل: صلّى النبي ﷺ الظهر خمساً.. فسجد سجدتين بعد ما سلّم.</small>
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>2. النقص:</strong> إذا ترك واجباً (مثل التشهد الأول).
+                <br><small>الدليل: قام النبي ﷺ في الظهر وعليه جلوس.. فسجد سجدتين قبل أن يسلم.</small>
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>3. الشك:</strong> التردد في عدد الركعات (هل صليت 3 أم 4؟).
+                <br><small>الدليل: "فَلْيَطْرَحِ الشَّكَّ وَلْيَبْنِ عَلَى مَا اسْتَيْقَنَ، ثُمَّ يَسْجُدُ سَجْدَتَيْنِ قَبْلَ أَنْ يُسَلِّمَ".</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="hadith-box" style="border-right-color: var(--accent-cyan);">
+        <strong style="color: var(--text-light);">💡 القاعدة في وقت السجود:</strong>
+        <ul style="margin-top: 10px; list-style: none;">
+            <li style="margin-bottom: 10px;">✅ <strong>عن زيادة:</strong> الأفضل أن يكون السجود <span class="accent-text">بعد السلام</span>.</li>
+            <li>✅ <strong>عن نقص أو شك:</strong> تكمل ما نقص منك أولاً، ثم تسجد السجدتين <span class="accent-text">قبل السلام</span>.</li>
+        </ul>
+    </div>
+</article>
+<article id="congregational-prayer" class="topic-box">
+    <h2 class="section-subtitle">🔷 أحكام وآداب صلاة الجماعة</h2>
+    <p>صلاة الجماعة للرجال البالغين القادرين واجبة في المسجد، ويأثم من يتركها بدون عذر شرعي (مثل المرض أو الخوف).</p>
+
+    <div class="hadith-box">
+        <strong>الدليل على الوجوب:</strong> حديث الرجل الأعمى الذي سأل النبي ﷺ الرخصة، فقال له: <span class="accent-text">"هل تسمع النداء بالصلاة؟"</span> قال: نعم، قال: <span class="accent-text">"فأجب"</span>. [رواه مسلم].
+        <br><br>
+        وقوله ﷺ: "لقد هممت أن آمر بالصلاة فتقام... ثم أخالف إلى رجال لا يشهدون الصلاة فأحرق عليهم بيوتهم". [البخاري ومسلم].
+    </div>
+
+    <h3 style="color: var(--accent-cyan); margin: 20px 0 10px 0;">✨ فضل صلاة الجماعة والمشي إليها:</h3>
+    <div class="forbidden-section" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px;">
+        <div class="forbidden-card">
+            <div>
+                <strong>مضاعفة الأجر:</strong> "صلاة الجماعة أفضل من صلاة الفذ <span class="accent-text">بسبع وعشرين درجة</span>".
+            </div>
+        </div>
+        <div class="forbidden-card">
+            <div>
+                <strong>البراءة من النفاق:</strong> مَن صلى لله 40 يوماً يدرك التكبيرة الأولى كُتبت له براءتان (من النار ومن النفاق).
+            </div>
+        </div>
+        <div class="forbidden-card">
+            <div>
+ "مَن غَدَا إلى المَسْجِدِ أوْ رَاحَ، أعَدَّ اللَّهُ له في الجَنَّةِ نُزُلًا".
+            </div>
+        </div>
+    </div>
+
+    <h3 style="color: var(--accent-purple); margin: 25px 0 10px 0;">من آداب وأحكام الجماعة:</h3>
+    <div class="forbidden-section">
+        <div class="forbidden-card">
+            <div>
+                <strong>تسوية الصفوف:</strong> "سَوُّوا صُفُوفَكُمْ، فإنَّ تَسْوِيَةَ الصَّفِّ مِن تَمَامِ الصَّلَاةِ".
+            </div>
+        </div>
+        <div class="forbidden-card">
+            <div>
+                <strong>متابعة الإمام:</strong> "إنَّما جُعِلَ الإمَامُ لِيُؤْتَمَّ به.. فإذا كَبَّرَ فَكَبِّرُوا، ولا تُكَبِّرُوا حتَّى يُكَبِّرَ".
+            </div>
+        </div>
+        <div class="forbidden-card mghlth">
+            <div>
+                <strong>المرور بين يدي المصلي:</strong> "لو يَعْلَمُ المارُّ بيْنَ يَدَيِ المُصَلِّي ماذا عليه، لَكانَ أنْ يَقِفَ أرْبَعِينَ خَيْرًا له".
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-box" style="background: rgba(255, 255, 255, 0.02); margin-top: 20px; padding: 25px; border-style: dashed;">
+        <h4 style="color: var(--accent-cyan); margin-bottom: 10px;">هل يقرأ المأموم الفاتحة؟</h4>
+        <p>الفاتحة ركن، والأحوط للمأموم أن يقرأها في <span class="accent-text">سكتة الإمام</span> بعد انتهائه من الفاتحة، عملاً بقوله تعالى: {وَإِذَا قُرِئَ الْقُرْآنُ فَاسْتَمِعُوا لَهُ وَأَنْصِتُوا}.</p>
+        
+        <hr style="border: 0; border-top: 1px solid var(--glass-border); margin: 20px 0;">
+
+        <h4 style="color: var(--accent-cyan); margin-bottom: 10px;">كيف تدرك الركعة؟</h4>
+        <ul style="list-style: none;">
+            <li style="margin-bottom: 10px;">✅ <strong>إدراك الركوع:</strong> إذا أدركت الإمام وهو راكع، فقد أدركت الركعة كاملة.</li>
+            <li>❌ <strong>فوات الركوع:</strong> إذا دخلت والإمام ساجد أو جالس، تدخل معه مباشرة لتنال أجر الجماعة، ولكن <span class="accent-text">لا تُحسب لك ركعة</span>.<br><strong>• «إذَا أتَيْتُمُ الصَّلَاةَ والنَّاسُ سُجُودٌ فافْعَلُوا كفِعلِهِم ولا تَعُدُّوهَا شيئًا، ومَن أدْرَكَ الركعةَ فقد أدْرَكَ الصَّلاةَ». (رواه أبو داود).</strong></li>
+        </ul>
+    </div>
+</article>
+<article id="prayer-shortening" class="topic-box">
+    <h2 class="section-subtitle">🔷 الجمع والقصر في الصلاة</h2>
+    <p>شرع الله للمسافر ومن لديه مشقة معتبرة رخصاً للتخفيف، وهي من محاسن هذا الدين ويسره.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; margin-top: 20px;">
+        
+        <div class="sunnah-column" style="border-right-color: var(--accent-cyan);">
+            <h3 style="color: var(--accent-cyan); margin-bottom: 15px;">الجمع بين الصلوات</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 15px;">هو أداء صلاتين في وقت إحداهما (جمع تقديم أو تأخير):</p>
+            
+            <div class="forbidden-section">
+                <div class="forbidden-card">
+                    <div>
+                        <strong>المجموعات:</strong> (الظهر مع العصر) & (المغرب مع العشاء).
+                    </div>
+                </div>
+                <div class="hadith-box" style="padding: 15px; font-size: 0.85rem;">
+                    <strong>الدليل:</strong> كان ﷺ إذا ارتحل قبل أن تزيغ الشمس <span class="accent-text">أخّر الظهر إلى وقت العصر</span> ثم جمع بينهما. <small>[متفق عليه]</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="sunnah-column" style="border-right-color: var(--accent-purple);">
+            <h3 style="color: var(--accent-purple); margin-bottom: 15px;">قصر الصلاة</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 15px;">هو جعل الصلاة الرباعية ركعتين فقط في السفر:</p>
+            
+            <div class="forbidden-section">
+                <div class="forbidden-card">
+                    <div>
+                        <strong>الصلوات التي تُقصر:</strong> الظهر، العصر، والعشاء (تصبح ركعتين).
+                    </div>
+                </div>
+                <div class="hadith-box" style="padding: 15px; font-size: 0.85rem; border-right-color: var(--accent-purple);">
+                    <strong>الدليل:</strong> عن ابن عمر قال: صَحِبْتُ رَسولَ اللَّهِ ﷺ فَكانَ <span class="accent-text">لا يَزِيدُ في السَّفَرِ علَى رَكْعَتَيْنِ</span>. <small>[متفق عليه]</small>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="forbidden-card" style="margin-top: 20px; background: rgba(129, 140, 248, 0.05);">
+        <div>
+            <strong>تنبيه:</strong> صلاة الفجر وصلاة المغرب <span class="accent-text">لا تُقصران أبداً</span>، ويُجمع المغرب مع العشاء فقط.
+        </div>
+    </div>
+</article>
+<article id="prayer-supplications" class="topic-box">
+    <h2 class="section-subtitle">🔷 مواضع الدعاء في الصلاة</h2>
+    <p>تتعدد المواطن التي يُشرع فيها الدعاء والذكر داخل الصلاة، و هذه أهمها بصيغها الصحيحة:</p>
+
+    <div class="forbidden-section">
+        <div class="hadith-box">
+            <strong class="accent-text">✨ دعاء الاستفتاح:</strong>
+            <p>"اللَّهُمَّ بَاعِدْ بَيْنِي وبينَ خَطَايَايَ كما بَاعَدْتَ بيْنَ المَشْرِقِ والمَغْرِبِ، اللَّهُمَّ نَقِّنِي مِن خَطَايَايَ كما يُنَقَّى الثَّوْبُ الأبْيَضُ مِنَ الدَّنَسِ، اللَّهُمَّ اغْسِلْنِي مِن خَطَايَايَ بالثَّلْجِ والمَاءِ والبَرَدِ". <small>[متفق عليه]</small></p>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>📍 أثناء قراءة القرآن:</strong> يُستحب سؤال الله عند آية الرحمة، والتعوذ عند آية العذاب، والتسبيح عند آية التسبيح.
+                <br><small>سنة مؤكدة في النفل وجائزة في الفرض لحديث حذيفة في صحيح مسلم.</small>
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>📍 في الركوع:</strong> "سُبْحَانَكَ اللَّهُمَّ رَبَّنَا وبِحَمْدِكَ، اللَّهُمَّ اغْفِرْ لي".
+            </div>
+        </div>
+
+        <div class="hadith-box">
+            <strong class="accent-text">✨ الرفع من الركوع (زيادات مستحبة):</strong>
+            <ul style="list-style: disc; padding-right: 20px; font-size: 0.9rem;">
+                <li>"رَبَّنَا وَلَكَ الْحَمْدُ، حَمْدًا كَثِيرًا طَيِّبًا مُبَارَكًا فِيهِ".</li>
+                <li>"رَبَّنَا وَلَكَ الْحَمْدُ، مِلْءَ السَّمَاوَاتِ، وَمِلْءَ الْأَرْضِ، وَمِلْءَ مَا بَيْنَهُمَا، وَمِلْءَ مَا شِئْتَ مِنْ شَيْءٍ بَعْدُ".</li>
+                <li>"أَهْلَ الثَّنَاءِ وَالْمَجْدِ، أَحَقُّ مَا قَالَ الْعَبْدُ، وَكُلُّنَا لَكَ عَبْدٌ، اللَّهُمَّ لَا مَانِعَ لِمَا أَعْطَيْتَ، وَلَا مُعْطِيَ لِمَا مَنَعْتَ، وَلَا يَنْفَعُ ذَا الْجَدِّ مِنْكَ الْجَدُّ".</li>
+            </ul>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>📍 في السجود:</strong> "اللَّهُمَّ اغْفِرْ لِي ذَنْبِي كُلَّهُ؛ دِقَّهُ وَجِلَّهُ، وَأَوَّلَهُ وَآخِرَهُ، وَعَلَانِيَتَهُ وَسِرَّهُ".
+                <br>أو: "اللَّهُمَّ لَكَ سَجَدْتُ، وَبِكَ آمَنْتُ.. سَجَدَ وَجْهِي لِلَّذِي خَلَقَهُ وَصَوَّرَهُ".
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>📍 بين السجدتين:</strong> "اللَّهُمَّ اغْفِرْ لِي، وَارْحَمْنِي، وَاهْدِنِي، وَارْزُقْنِي، وَعَافِنِي".
+            </div>
+        </div>
+
+        <div class="hadith-box" style="border-right-color: #ff4d4d;">
+            <strong style="color: #ff4d4d;">⚠️ الاستعاذة من الأربع (قبل التسليم):</strong>
+            <p>"اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ عَذَابِ جَهَنَّمَ، وَمِنْ عَذَابِ الْقَبْرِ، وَمِنْ فِتْنَةِ الْمَحْيَا وَالْمَمَاتِ، وَمِنْ شَرِّ فِتْنَةِ الْمَسِيحِ الدَّجَّالِ".</p>
+        </div>
+    </div>
+</article>
+<article id="after-prayer-dhikr" class="topic-box">
+    <h2 class="section-subtitle">🔷 أذكار ما بعد الصلاة</h2>
+    <p>يُستحب للمصلي بعد الفراغ من الصلاة المكتوبة أن يأتِي بالأذكار الواردة:</p>
+
+    <div class="forbidden-section">
+        <div class="forbidden-card">
+            <div>
+                <strong>1. الاستغفار والتحية:</strong> استغفر الله (3 مرات)، ثم: "اللَّهُمَّ أَنْتَ السَّلامُ ومِنْكَ السَّلامُ، تَبارَكْتَ ذا الجَلالِ والإكْرامِ".
+            </div>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>2. التهليل:</strong> "لا إلَهَ إلَّا اللَّهُ وَحْدَهُ لا شَرِيكَ له.. اللَّهُمَّ لا مانِعَ لِما أَعْطَيْتَ، وَلا مُعْطِيَ لِمَا مَنَعْتَ".
+            </div>
+        </div>
+
+        <div class="hadith-box" style="background: rgba(34, 211, 238, 0.05);">
+            <strong class="accent-text">✨ ثواب التسبيح (99 + تمام المئة):</strong>
+            <p>سبحان الله (33)، الحمد لله (33)، الله أكبر (33).. ثم: "لا إله إلا الله وحده لا شريك له..". 
+            <br><strong>الفضل:</strong> غُفرت خطاياه وإن كانت مثل زبد البحر. <small>[رواه مسلم]</small></p>
+        </div>
+
+        <div class="forbidden-card" style="border-right-color: var(--accent-purple);">
+            <div>
+                <strong>3. آية الكرسي والمعوذات:</strong> مَن قرأ آية الكرسي لم يمنعه من دخول الجنة إلا أن يموت.
+                <br><small>يُسن قراءة الإخلاص، الفلق، والناس (مرة بعد كل صلاة، و3 مرات بعد الفجر والمغرب).</small>
+            </div>
+        </div>
+
+        <div class="forbidden-card" style="background: rgba(129, 140, 248, 0.05);">
+            <div>
+                <strong>4. دعاء بعد صلاة الصبح:</strong> "اللَّهُمَّ إنِّي أَسْأَلُكَ عِلْمًا نَافِعًا، وَرِزْقًا طَيِّبًا، وَعَمَلًا مُتَقَبَّلًا".
+            </div>
+        </div>
+    </div>
+</article>
+<section id="prayer-other-obligatory">
+    
+    <article id="friday-prayer" class="topic-box">
+        <h2 class="section-subtitle">🔷 صلاة الجمعة</h2>
+        <p>صلاة أسبوعية واجبة على كل رجل مسلم قادر، تُصلى ركعتين جهريتين في وقت الظهر، ويشترط لها الجماعة والخطبة.</p>
+
+        <div class="hadith-box" style="border-right-color: #ff4d4d;">
+            <strong>التحذير من تركها:</strong> {يَا أَيُّهَا الَّذِينَ آمَنُوا إِذَا نُودِيَ لِلصَّلَاةِ مِن يَوْمِ الْجُمُعَةِ فَاسْعَوْا إِلَىٰ ذِكْرِ اللَّهِ}.
+            <br>قال ﷺ: <span class="accent-text" style="color: #ff4d4d;">"مَنْ تَرَكَ ثَلَاثَ جُمَعٍ تَهَاوُنًا بِهَا طَبَعَ اللَّهُ عَلَى قَلْبِهِ"</span>.
+        </div>
+
+        <div class="forbidden-card" style="background: rgba(34, 211, 238, 0.05);">
+            <div>
+                <strong>كيف تدرك الجمعة؟</strong>
+                <ul style="margin-top: 10px; list-style: none;">
+                    <li>✅ <strong>إدراك ركعة:</strong>إذا أدركت ركوع الركعة الثانية، تقوم وتأتي بركعة كاملة بعد سلام الإمام.</li>
+                    <li>❌ <strong>فوات الركوع الثاني:</strong> إذا دخلت بعد ركوع الركعة الثانية (في السجود مثلاً)، فاتتك الجمعة وتكملها <span class="accent-text">ظهراً (4 ركعات)</span>.</li>
+                </ul>
+            </div>
+        </div>
+    </article>
+
+    <article id="eid-prayer" class="topic-box">
+        <h2 class="section-subtitle">🔷 صلاة العيدين (الفطر والأضحى)</h2>
+        <p>هي فرض كفاية، تُصلى ركعتان بعد شروق الشمس بنحو 15-20 دقيقة بلا أذان ولا إقامة، والخطبة تكون <strong>بعد</strong> الصلاة.</p>
+
+        <div class="forbidden-section" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px;">
+            <div class="forbidden-card">
+                <div>
+                    <strong>صفة الركعة الأولى:</strong> يكبر الإمام تكبيرة الإحرام، ثم يتبعها بـ <span class="accent-text">6 تكبيرات</span> إضافية قبل القراءة.
+					<br>
+					<strong>صفة الركعة الثانية:</strong> يقوم من السجود مكبراً، ثم يتبعها بـ <span class="accent-text">5 تكبيرات</span> إضافية قبل القراءة.
+                </div>
+            </div>
+            <div class="forbidden-card">
+                <div>
+                  أمر النبي ﷺ بخروج الجميع (الرجال والنساء وحتى الحيّض) ليشهدوا الخير ودعوة المسلمين.
+                </div>
+            </div>
+        </div>
+
+        <div class="hadith-box">
+            <strong>عن جابر بن عبد الله:</strong> "شَهِدْتُ مع رَسولِ اللهِ ﷺ الصَّلَاةَ يَومَ العِيدِ، فَبَدَأَ بالصَّلَاةِ قَبْلَ الخُطْبَةِ، بغيرِ أَذَانٍ وَلَا إِقَامَةٍ".
+        </div>
+    </article>
+
+    <article id="janaza-prayer" class="topic-box">
+        <h2 class="section-subtitle">🔷 صلاة الجنازة</h2>
+        <p>صلاة قائمة ليس فيها ركوع ولا سجود، وهي فرض كفاية وتتكون من <strong>4 تكبيرات</strong>:</p>
+
+        <div class="forbidden-section">
+            <div class="logic-results">
+                <div class="logic-item"><strong>1</strong>الفاتحة</div>
+                <div class="logic-item"><strong>2</strong>الصلاة الإبراهيمية</div>
+                <div class="logic-item"><strong>3</strong>الدعاء للمتوفى</div>
+                <div class="logic-item"><strong>4</strong>دعاء عام ثم تسليمة واحدة</div>
+            </div>
+        </div>
+
+        <div class="hadith-box" style="border-right-color: var(--accent-cyan);">
+            <strong>فضلها العظيم:</strong> قال ﷺ: مَنْ شَهِدَ الجَنَازَةَ حَتَّى يُصَلَّى عَلَيْهَا فَلَهُ <span class="accent-text">قِيراطٌ</span> وَمَنْ شَهَدَهَا حَتَّى تُدْفَنَ فَلَهُ قِيراطَانِ. قيل: وما القيراطان؟ قال: "مِثْلُ الجَبَلَيْنِ العَظِيمَيْنِ. <small>[البخاري ومسلم]</small>
+        </div>
+    </article>
+<section id="prayer-sunnah">
+    
+    <article id="sunnah-ratiba" class="topic-box">
+    <h2 class="section-subtitle">🔷 السنن الرواتب (12 ركعة)</h2>
+    <p>هي الصلوات التابعة للفرائض، وفضلها عظيم يبني الله لك بها بيتاً في الجنة.</p>
+
+    <div class="sunnah-table-container">
+    <table class="sunnah-table">
+        <thead>
+            <tr>
+                <th>الصلاة</th>
+                <th>قبل الفريضة</th>
+                <th>بعد الفريضة</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="prayer-name">الفجر</td>
+                <td><span class="rakat-num">2</span></td>
+                <td><span class="no-rakat">-</span></td>
+            </tr>
+            <tr>
+                <td class="prayer-name">الظهر</td>
+                <td><span class="rakat-num">2 + 2</span></td>
+                <td><span class="rakat-num">2</span></td>
+            </tr>
+            <tr>
+                <td class="prayer-name">العصر</td>
+                <td><span class="no-rakat">-</span></td>
+                <td><span class="no-rakat">-</span></td>
+            </tr>
+            <tr>
+                <td class="prayer-name">المغرب</td>
+                <td><span class="no-rakat">-</span></td>
+                <td><span class="rakat-num">2</span></td>
+            </tr>
+            <tr>
+                <td class="prayer-name">العشاء</td>
+                <td><span class="no-rakat">-</span></td>
+                <td><span class="rakat-num">2</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+    <div class="hadith-box">
+         قال ﷺ: <span class="accent-text">«مَا مِنْ عَبْدٍ مُسْلِمٍ يُصَلِّي لِلَّهِ كُلَّ يَوْمٍ ثِنْتَيْ عَشْرَةَ رَكْعَةً تَطَوُّعًا.. إِلَّا بَنَى اللَّهُ لَهُ بَيْتًا فِي الْجَنَّةِ»</span>. [رواه مسلم]
+    </div>
+
+    <div class="forbidden-card" style="margin-top: 15px; border-right-color: var(--accent-cyan);">
+        <div>
+            <strong>💡 قاعدة في أداء النوافل:</strong>
+            <p style="margin-top: 5px; font-size: 0.9rem;">
+                قال ﷺ: <span class="accent-text">"صلاة الليل مثنى مثنى، متفق على صحته. وفي روايةٍ اخرى: صلاة الليل والنهار مثنى مثنى،."</span>
+                <br>
+                <small>(أي تُصلى ركعتين ركعتين، بسلام بينهما).</small>
+            </p>
+        </div>
+    </div>
+</article>
+<article id="duha-prayer" class="topic-box">
+        <h2 class="section-subtitle">☀️ صلاة الضحى</h2>
+        <p>صلاة الضحى تؤدى بعد ارتفاع الشمس، تصلى ركعتان أو أكثر  تؤدى من بعد شروق الشمس بـ15 دقيقة إلى قبل الظهر بـ15 دقيقة.</p>
+        <div class="hadith-box">
+            أوصى بها النبي ﷺ أبا هريرة، وقالت عائشة رضي الله عنها: <span class="accent-text">"كان يصلي الضحى أربعاً ويزيد ما شاء الله"</span>.
+        </div>
+    </article>
+    <article id="night-prayer" class="topic-box">
+        <h2 class="section-subtitle">🌙 قيام الليل والوتر</h2>
+        <div class="forbidden-section">
+            <div class="forbidden-card">
+                <div>
+                    <strong>قيام الليل:</strong> تُصلى ركعتين ركعتين، تطيل فيهما القراءة والسجود حسب القدرة.
+					<br>
+					<p>عن أبي هريرة رضي الله عنه قال:</p><strong>"أَوْصَانِي خَلِيلِي ﷺ بثَلَاثٍ: صِيَامِ ثَلَاثَةِ أَيَّامٍ مِن كُلِّ شَهْرٍ، ورَكْعَتَيِ الضُّحَى، وأَنْ أُوتِرَ قَبْلَ أَنْ أَنَامَ"</strong><small>(رواه البخاري ومسلم).</small>
+                </div>
+            </div>
+            <div class="forbidden-card">
+                <div>
+                    <strong>صلاة الوتر:</strong> ختام صلاة الليل، وأقلها ركعة واحدة.
+                    <br><small>قال ﷺ: "اجْعَلُوا آخِرَ صَلَاتِكُمْ باللَّيْلِ وِتْرًا".</small>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article id="special-sunnah" class="topic-box">
+        <h2 class="section-subtitle">🔷 نوافل مرتبطة بأسباب</h2>
+        <div class="forbidden-section">
+            <div class="forbidden-card">
+                <div><strong>💧 سنة الوضوء:</strong><p>ركعتان مباشرة بعد الفراغ من الوضوء.</p><p class="accent-text">"قال ﷺ:"ما مِن أَحَدٍ يَتَوَضَّأُ فيُحْسِنُ الوُضُوءَ، ويُصَلِّي رَكْعَتَيْنِ، يُقْبِلُ عليهما بقَلْبِهِ ووَجْهِهِ، إلَّا وجَبَتْ له الجَنَّةُ".</p></div>
+            </div>
+            <div class="forbidden-card">
+                <div><strong>🕌 تحية المسجد:</strong><p> ركعتان عند دخول المسجد قبل الجلوس. </p><p class="accent-text"> قال ﷺ: "إِذَا دَخَلَ أَحَدُكُمُ الْمَسْجِدَ، فَلَا يَجْلِسْ حَتَّى يُصَلِّيَ رَكْعَتَيْنِ"</p></div>
+            </div>
+            <div class="forbidden-card">
+                <div><strong>🌱 صلاة التوبة:</strong><p> ركعتان بنية الرجوع عن ذنب معين، يتبعهما استغفار. </p><p class="accent-text"> قال ﷺ:"ما من عبدٍ يذنبُ ذنبًا فيُحسنُ الطهورَ، ثم يقومُ فيُصلي ركعتينِ، ثم يستغفرُ اللهَ إلا غفر اللهُ لهُ" </p></div>
+            </div>
+            <div class="forbidden-card">
+                <div><strong>🧳 القادم من السفر:</strong><p> ركعتان في المسجد فور الوصول من السفر  استغفار. </p><p class="accent-text"> عن كعب بن مالك رضي الله عنه: "أَنَّ رَسُولَ اللَّهِ ﷺ كَانَ لَا يَقْدَمُ مِنْ سَفَرٍ إِلَّا نَهَارًا فِي الضُّحَى، فَإِذَا قَدِمَ بَدَأَ بِالْمَسْجِدِ، فَصَلَّى فِيهِ رَكْعَتَيْنِ، ثُمَّ جَلَسَ فِيهِ." </p></div>
+            </div>
+            <div class="forbidden-card">
+                <div>
+                    <strong>🤔 صلاة الاستخارة:</strong><p> ركعتان و بعد السلام ترفع يديك وتدعو بدعاء الاستخارة المعروف: </p>
+                    <small style="display: block; margin-top: 5px; color: var(--accent-cyan);">"اللَّهمَّ إنِّي أستخيرُكَ بعِلْمِكَ وأستقدِرُكَ بقدرتِكَ وأسأَلُكَ مِن فضلِكَ العظيمِ فإنَّكَ تقدِرُ ولا أقدِرُ وتعلَمُ ولا أعلَمُ وأنتَ علَّامُ الغُيوبِ اللَّهمَّ فإنْ كُنْتَ تعلَمُ هذا الأمرَ - يُسمِّيه بعَينِه - خيرًا لي في دِيني ومَعاشي وعاقبةِ أمري فقدِّرْه لي ويسِّرْه لي وبارِكْ فيه وإنْ كان شرًّا لي في دِيني ومَعادي ومَعاشي وعاقبةِ أمري فاصرِفْه عنِّي واصرِفْني عنه وقدِّرْ لي الخيرَ حيثُ كان ورضِّني به"</small>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <article id="eclipse-rain" class="topic-box">
+        <h2 class="section-subtitle">🔷 صلوات الآيات والحاجة</h2>
+        
+        <div class="hadith-box" style="border-right-color: var(--accent-purple);">
+            <strong>🌧️ صلاة الاستسقاء:</strong><p>ركعتان يجهر فيهما بالقراءة، تُصلى بلا أذان ولا إقامة. يُسن فيها التكبير كالعيدين، والخطبة بعدها.<p><p class="accent-text"> "خَرَجَ النبيُّ ﷺ إلى المُصَلَّى يَسْتَسْقِي، فَاسْتَقْبَلَ القِبْلَةَ، وقَلَبَ رِدَاءَهُ، وصَلَّى رَكْعَتَيْنِ". </p>
+        </div>
+
+        <div class="forbidden-card">
+            <div>
+                <strong>☀️ صلاة الكسوف والخسوف:</strong><p>تصلى ركعتان.<br>
+1.	يكبر ويقرأ الفاتحة وسورة طويلة، ثم يركع ركوعاً طويلاً.</p><p>
+2.	يرفع من الركوع ويقرأ الفاتحة وسورة طويلة (أقصر من الأولى).</p><p>
+3.	يركع مرة ثانية ثم يرفع ويسجد سجدتين طويلتين.</p>
+<p>4.	يكرر نفس الخطوات في الركعة الثانية.</p>
+<p class="accent-text"> "خَسَفَتِ الشَّمسُ في عَهدِ رَسولِ اللهِ صلَّى اللهُ عليه وسلَّم، فصَلَّى رَسولُ اللهِ صلَّى اللهُ عليه وسلَّم بالنَّاسِ، فقامَ فأطالَ القيامَ، ثُمَّ رَكَعَ فأطالَ الرُّكوعَ، ثُمَّ قامَ فأطالَ القيامَ وهو دونَ القيامِ الأوَّلِ، ثُمَّ رَكَعَ فأطالَ الرُّكوعَ وهو دونَ الرُّكوعِ الأوَّلِ، ثُمَّ سَجَدَ فأطالَ السُّجودَ، ثُمَّ فعَلَ في الرَّكعةِ الثَّانيةِ مِثلَ ما فعَلَ في الأولى، ثُمَّ انصَرَفَ وقدِ انجَلَتِ الشَّمسُ، فخَطَبَ النَّاسَ، فحَمِدَ اللهَ وأثنى عليه، ثُمَّ قال: إنَّ الشَّمسَ والقَمَرَ آيَتانِ مِن آياتِ اللهِ، لا يَخسِفانِ لمَوتِ أحَدٍ ولا لحَياتِه، فإذا رَأيتُم ذلك فادعوا اللهَ وكَبِّروا وصَلُّوا وتَصَدَّقوا." </p>
+ 
+            </div>
+        </div>
+    </article>
+
+</section>
+</section>
+<article id="forbidden-prayer-times" class="topic-box">
+    <h2 class="section-subtitle" style="color: #ff9800;">🚫 أوقات النهي عن الصلاة</h2>
+    <p>هناك أوقات محددة نهى النبي ﷺ عن الصلاة فيها (صلاة التطوع التي لا سبب لها)، وهي تنقسم إلى نوعين:</p>
+
+    <h3 style="color: var(--accent-cyan); margin: 20px 0 10px 0;">1. النهي المرتبط بصلاة (الفجر والعصر):</h3>
+    <div class="hadith-box" style="border-right-color: var(--accent-cyan);">
+        <strong>الدليل:</strong> قوله ﷺ: <span class="accent-text">"لا صَلاةَ بَعْدَ الصُّبْحِ حتَّى تَرْتَفِعَ الشَّمْسُ، ولا صَلاةَ بَعْدَ العَصْرِ حتَّى تَغِيبَ الشَّمْسُ"</span>. [متفق عليه]
+    </div>
+    
+    <div class="forbidden-section">
+        <div class="forbidden-card">
+            <div>
+                <strong>بعد صلاة الفجر:</strong> يستمر النهي من بعد أداء الصلاة حتى تشرق الشمس وترتفع قيد رمح.
+            </div>
+        </div>
+        <div class="forbidden-card">
+            <div>
+                <strong>بعد صلاة العصر:</strong> يبدأ النهي من بعد أداء صلاة العصر حتى تغرب الشمس بالكامل.
+            </div>
+        </div>
+    </div>
+
+    <h3 style="color: #ff4d4d; margin: 25px 0 10px 0;">2. النهي المغلظ (حالات الشمس الثلاث):</h3>
+    <p style="font-size: 0.9rem; margin-bottom: 15px;">وهي أوقات قصيرة جداً يكون النهي فيها أشد وأكد.</p>
+    
+    <div class="hadith-box" style="border-right-color: #ff4d4d; background: rgba(255, 77, 77, 0.05);">
+        <strong>الدليل:</strong> حديث عقبة بن عامر: "ثَلَاثُ سَاعَاتٍ كانَ رَسولُ اللهِ ﷺ يَنْهَانَا أَنْ نُصَلِّيَ فِيهِنَّ.. <span style="color: #ff4d4d;">حِينَ تَطْلُعُ الشَّمْسُ، وَحِينَ يَقُومُ قَائِمُ الظَّهِيرَةِ، وَحِينَ تَضَيَّفُ الشَّمْسُ لِلْغُرُوبِ</span>". [رواه مسلم]
+    </div>
+
+    <div class="logic-results">
+        <div class="logic-item" style="border-color: #ff4d4d;">
+            <strong>وقت الطلوع</strong>
+            <small>من بداية ظهور قرص الشمس حتى ترتفع (بازغة).</small>
+        </div>
+        <div class="logic-item" style="border-color: #ff4d4d;">
+            <strong>قائم الظهيرة</strong>
+            <small>عندما تكون الشمس في كبد السماء (قبل الزوال بـ 10 دقائق).</small>
+        </div>
+        <div class="logic-item" style="border-color: #ff4d4d;">
+            <strong>وقت الغروب</strong>
+            <small>عندما تميل الشمس للغروب (تضيف) حتى تختفي تماماً.</small>
+        </div>
+    </div>
+
+    <div class="topic-box" style="background: rgba(255, 255, 255, 0.02); margin-top: 25px; border: 1px dashed var(--accent-cyan);">
+        <h4 style="color: var(--accent-cyan); margin-bottom: 10px;">💡 القاعدة العامة في أوقات النهي:</h4>
+        <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 8px;">❌ <strong>يُمنع:</strong> أي صلاة "نفل مطلق" ليس لها سبب واضح.</li>
+            <li style="margin-bottom: 8px;">✅ <strong>يجوز:</strong> الصلوات التي لها سبب (مثل: تحية المسجد، ركعتي الطواف، قضاء الفوائت) عند كثير من العلماء.</li>
+        </ul>
+    </div>
+</article>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
