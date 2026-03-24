@@ -433,6 +433,40 @@ h1, h2 {
         padding: 20px;
         width: 100%;
     }
+	
+	/* --- تعديل بطاقات النهي للموبايل --- */
+    .forbidden-card, .forbidden-card.mghlth {
+        padding: 15px 20px; /* تقليل الفراغات الداخلية */
+        font-size: 0.9rem;   /* تصغير الخط قليلاً ليناسب العرض */
+        line-height: 1.6;
+        display: flex;
+        flex-direction: column; /* جعل النص والوقت فوق بعض إذا لزم الأمر */
+        gap: 8px;
+        border-right-width: 4px; /* تنحيف الخط الجانبي قليلاً */
+    }
+
+    /* إلغاء تأثير الـ TranslateX في الموبايل عشان ما تطلع البطاقة بره الشاشة */
+    .forbidden-card:hover, .forbidden-card.mghlth:hover {
+        transform: translateY(-3px); 
+    }
+
+    /* --- تعديل صندوق الأحاديث للموبايل --- */
+    .hadith-box {
+        padding: 20px 15px; /* مساحة أقل من الجوانب */
+        margin: 25px 0;
+        font-size: 0.95rem;
+        line-height: 1.8;
+        border-right-width: 4px; /* تناسق مع بطاقات النهي */
+        text-align: justify; /* توزيع النص بشكل متساوٍ */
+    }
+
+    /* تنسيق أرقام الوقت داخل بطاقات النهي في الموبايل */
+    .forbidden-card span {
+        display: block;
+        color: var(--accent-cyan);
+        font-weight: bold;
+        font-size: 1rem;
+    }
 
     /* تعديل شبكة مواقيت الصلاة (تصير صفين بدل صف واحد) */
     .live-times-grid {
